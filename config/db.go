@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-var MongoString string = os.Getenv("MONGOSTRING")
+var MongoString string = os.Getenv("MONGODB_URI")
 
 var mongoinfo = atdb.DBInfo{
 	DBString: MongoString,
