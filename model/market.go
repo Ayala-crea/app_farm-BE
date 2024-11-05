@@ -23,3 +23,10 @@ type Market struct {
 	Alamat     string             `bson:"alamat" json:"alamat"`
 	Menu       []Menu             `bson:"menu" json:"menu"`
 }
+
+type Response struct {
+	Response string `json:"response"`
+	Info     string `json:"info,omitempty"`
+	Status   string `json:"status,omitempty"`
+	Location string `json:"location,omitempty"`
+}

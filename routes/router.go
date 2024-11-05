@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"gobizdevelop/controller"
 	"gobizdevelop/controller/auth"
 	"gobizdevelop/controller/market"
 	"gobizdevelop/controller/menu"
@@ -12,6 +13,8 @@ import (
 // InitializeRoutes sets up the router
 func InitializeRoutes() *mux.Router {
 	router := mux.NewRouter()
+
+	router.HandleFunc("/", controller.GetHome).Methods("GET")
 
 	// Define your routes here
 	router.HandleFunc("/regis", auth.RegisterUsers).Methods("POST")
