@@ -18,7 +18,7 @@ import (
 func MongoConnect(mconn DBInfo) (db *mongo.Database, err error) {
 	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI(mconn.DBString))
 	if err != nil {
-		mconn.DBString = SRVLookup(mconn.DBString)
+		// mconn.DBString = SRVLookup(mconn.DBString)
 		client, err = mongo.Connect(context.TODO(), options.Client().ApplyURI(mconn.DBString))
 		if err != nil {
 			return
