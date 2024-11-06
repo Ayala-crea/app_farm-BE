@@ -3,6 +3,8 @@ package atdb
 import (
 	"database/sql"
 	"fmt"
+
+	_ "github.com/lib/pq"
 )
 
 func PostgresConnect(host string, port int, user, password, dbname, sslmode string) (*sql.DB, error) {
