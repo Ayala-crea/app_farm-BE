@@ -7,15 +7,13 @@ import (
 	"os"
 )
 
-// MongoDB configuration
-var MongoString string = os.Getenv("MONGOSTRING")
+var MongoString string = os.Getenv("MONGODB_URI")
 var mongoinfo = atdb.DBInfo{
 	DBString: MongoString,
 	DBName:   "gobizdev",
 }
 var Mongoconn, ErrorMongoconn = atdb.MongoConnect(mongoinfo)
 
-// PostgreSQL configuration
 var PostgresString string = os.Getenv("POSTGRESSTRING")
 
 var PostgresConn, ErrorPostgresConn = atdb.PostgresConnect(PostgresString)
