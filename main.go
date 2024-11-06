@@ -54,12 +54,10 @@ func main() {
 
 	handler := c.Handler(router)
 
-	// Get the port from the environment variable
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8080" // Default port if PORT is not set
+		port = "8080"
 	}
-
-	fmt.Printf("Server is running on port %s\n", port)
 	log.Fatal(http.ListenAndServe(":"+port, handler))
+
 }
