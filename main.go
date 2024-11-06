@@ -27,6 +27,19 @@ func main() {
 		fmt.Println("MongoDB connection is nil")
 	}
 
+	postgresDB := config.PostgresConn
+	if config.ErrorPostgresConn != nil {
+		fmt.Println("Failed to connect to PostgreSQL:", config.ErrorPostgresConn)
+		return
+	}
+
+	// Check if the PostgreSQL connection is successful
+	if postgresDB != nil {
+		fmt.Println("Successfully connected to PostgreSQL!")
+	} else {
+		fmt.Println("PostgreSQL connection is nil")
+	}
+
 	// Initialize the router from the routes package
 	router := routes.InitializeRoutes()
 
